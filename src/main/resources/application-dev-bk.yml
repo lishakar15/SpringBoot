@@ -1,0 +1,58 @@
+server:
+  port: 8080
+spring :
+  profiles:
+    active : local
+---
+spring:
+  profiles: dev
+  application:
+    name: SpringBootProject
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:mydatabase-dev
+    driverClassName: org.h2.Driver
+    username: root
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+
+---
+spring:
+  profiles: qa
+  application:
+    name: SpringBootProject
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:mydatabase
+    driverClassName: org.h2.Driver
+    username: root
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+
+---
+spring:
+  profiles: prod
+  application:
+    name: SpringBootProject
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:mydatabase-prod
+    driverClassName: org.h2.Driver
+    username: root
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+
+welcome:
+  msg: Welcome to the Home Page!!

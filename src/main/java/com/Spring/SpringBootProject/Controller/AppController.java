@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.DefaultApplicationArguments;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -41,6 +42,10 @@ public class AppController {
     @GetMapping("/getAllDepartments")
     public List<Department> getAllDepartment()
     {
+        if(Logger.isDebugEnabled())
+        {
+            System.out.println("Debug is enabled in the AppController class");
+        }
         return departmentService.getAllDepartments();
     }
 
@@ -48,5 +53,13 @@ public class AppController {
     public String homePage()
     {
         return welcomeMsg; //Returning custom property value
+    }
+
+    @PutMapping("/updateDepartment/{id}")
+    public void updateDepartment(@RequestBody Department department, @PathVariable("id") Integer departmentId)
+    {
+        System.out.println(department);
+        if(department != null)
+         departmentService.updateDepartmentById(department.getDepartmentName(),departmentId);
     }
 }

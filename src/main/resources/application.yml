@@ -1,0 +1,23 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: SpringBootProject
+  datasource:
+    driverClassName: org.h2.Driver
+    password: password
+    url: jdbc:h2:mem:mydatabase
+    username: root
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: '*'
+welcome:
+  msg: Welcome to the Home Page!!
