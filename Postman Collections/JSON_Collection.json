@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "2a3ea9da-680a-471d-aeb6-9556bbc2b8f6",
+		"name": "Postman Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "saveAllDepartment",
+			"id": "2bcccd80-8fb2-429c-b2b8-de92365dd1b4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"departmentName\": \"Engineering\",\r\n    \"departmentCode\": \"ENG\"\r\n  },\r\n  {\r\n    \"departmentName\": \"Marketing\",\r\n    \"departmentCode\": \"MRKT\"\r\n  },\r\n  {\r\n    \"departmentName\": \"Finance\",\r\n    \"departmentCode\": \"FIN\"\r\n  }\r\n]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8082/saveAllDepartments"
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllDepartments",
+			"id": "3dc337d1-60e2-48fe-80f5-3b2feb3dd125",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8082/getAllDepartments"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"id": "d054ec1d-825b-4bf5-81ad-0babc7da3e46",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Change Logging Level",
+			"id": "0981cf7e-6836-4267-b6ff-648d3913fd5c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "ShutDown App",
+			"id": "fa02285b-4d1e-4c15-854a-eb836e6e97c8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Update Department",
+			"id": "6e2063ed-d2db-409a-a505-3254ea9f2116",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"departmentName\": \"Housekeeping\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8082/updateDepartment/100"
+			},
+			"response": []
+		},
+		{
+			"name": "Health Check",
+			"id": "3ba1a901-9333-4275-a862-f78a8de42a86",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
